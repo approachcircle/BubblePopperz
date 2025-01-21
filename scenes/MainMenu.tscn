@@ -114,7 +114,7 @@ offset_bottom = 888.0
 theme = SubResource("Theme_n1s2g")
 text = "Normal"
 
-[node name="Limitless" type="Button" parent="Gamemodes"]
+[node name="Powerless" type="Button" parent="Gamemodes"]
 offset_left = 1346.0
 offset_top = 896.0
 offset_right = 1546.0
@@ -132,9 +132,9 @@ text = "Powerless"
 
 [node name="ModesCover" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 1120.0
+offset_left = 1112.0
 offset_top = 808.0
-offset_right = 1552.0
+offset_right = 1544.0
 offset_bottom = 1064.0
 color = Color(0, 0, 0, 1)
 
