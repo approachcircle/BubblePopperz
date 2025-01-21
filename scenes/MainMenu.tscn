@@ -1,0 +1,98 @@
+[gd_scene load_steps=6 format=3 uid="uid://da5rbo1846t4o"]
+
+[ext_resource type="Theme" uid="uid://c5ia32277hif5" path="res://ButtonLargeText.tres" id="1_p6aqv"]
+[ext_resource type="Script" path="res://scripts/PlayButton.gd" id="2_t3mui"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_k4rd0"]
+font_size = 92
+font_color = Color(0.556863, 1, 1, 1)
+
+[sub_resource type="Theme" id="Theme_n1s2g"]
+default_font_size = 40
+
+[sub_resource type="Theme" id="Theme_p6k0t"]
+default_font_size = 36
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -148.0
+offset_top = -206.0
+offset_right = 152.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_p6aqv")
+text = "Play"
+script = ExtResource("2_t3mui")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -350.5
+offset_top = 70.0
+offset_right = 350.5
+offset_bottom = 216.0
+grow_horizontal = 2
+text = "Bubble Popperz"
+label_settings = SubResource("LabelSettings_k4rd0")
+
+[node name="Gamemodes" type="CanvasGroup" parent="."]
+
+[node name="Line0" type="Line2D" parent="Gamemodes"]
+position = Vector2(1092, 881)
+points = PackedVector2Array(20, 15, 92, 15, 92, -33, 244, -33)
+
+[node name="Line1" type="Line2D" parent="Gamemodes"]
+position = Vector2(1092, 922)
+points = PackedVector2Array(20, 14, 92, 14, 244, 14)
+
+[node name="Line2" type="Line2D" parent="Gamemodes"]
+position = Vector2(1093, 993)
+scale = Vector2(0.962478, -1.00107)
+points = PackedVector2Array(19.7407, 16.9819, 94.5476, 16.9819, 94.5476, -30.9668, 252.473, -30.9668)
+
+[node name="Normal" type="Button" parent="Gamemodes"]
+offset_left = 1336.0
+offset_top = 808.0
+offset_right = 1536.0
+offset_bottom = 888.0
+theme = SubResource("Theme_n1s2g")
+text = "Normal"
+
+[node name="Limitless" type="Button" parent="Gamemodes"]
+offset_left = 1336.0
+offset_top = 896.0
+offset_right = 1536.0
+offset_bottom = 976.0
+theme = SubResource("Theme_p6k0t")
+text = "Limitless"
+
+[node name="TBD" type="Button" parent="Gamemodes"]
+offset_left = 1336.0
+offset_top = 984.0
+offset_right = 1536.0
+offset_bottom = 1064.0
+text = "TBD..."
+
+[node name="ModesCover" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 1112.0
+offset_top = 808.0
+offset_right = 1536.0
+offset_bottom = 1064.0
+color = Color(0, 0, 0, 1)
