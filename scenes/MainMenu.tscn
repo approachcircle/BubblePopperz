@@ -132,9 +132,9 @@ text = "Powerless"
 
 [node name="ModesCover" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 1112.0
+offset_left = 1120.0
 offset_top = 808.0
-offset_right = 1544.0
+offset_right = 1552.0
 offset_bottom = 1064.0
 color = Color(0, 0, 0, 1)
 

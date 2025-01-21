@@ -13,7 +13,12 @@ config_version=5
 config/name="BubblePopperz"
 run/main_scene="res://scenes/MainMenu.tscn"
 config/features=PackedStringArray("4.3")
+boot_splash/bg_color=Color(1, 1, 1, 1)
+boot_splash/image="res://assets/Bubble.png"
+boot_splash/fullsize=false
+boot_splash/use_filter=false
 config/icon="res://icon.png"
+boot_splash/minimum_display_time=1000
 
 [autoload]
 
