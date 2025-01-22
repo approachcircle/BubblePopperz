@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://comd4duiogx50"]
+
+[ext_resource type="Texture2D" uid="uid://dyxwgmeero1aa" path="res://assets/frame 0 bubble.png" id="1_3uqim"]
+[ext_resource type="Texture2D" uid="uid://caw8quotb0bou" path="res://assets/frame 1 bubble.png" id="2_4va3m"]
+[ext_resource type="Texture2D" uid="uid://dlkd7lw68gtcy" path="res://assets/frame 2 bubble.png" id="3_6ir74"]
+[ext_resource type="Texture2D" uid="uid://y15wogtbi7bv" path="res://assets/frame 3 bubble.png" id="4_6tppt"]
+[ext_resource type="Texture2D" uid="uid://bcyufv8yd74pp" path="res://assets/frame 4 bubble.png" id="5_7hk54"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jkr7u"]
+animations = [{
+"frames": [{
+"duration": 3.0,
+"texture": ExtResource("1_3uqim")
+}, {
+"duration": 3.0,
+"texture": ExtResource("2_4va3m")
+}, {
+"duration": 3.0,
+"texture": ExtResource("3_6ir74")
+}, {
+"duration": 3.0,
+"texture": ExtResource("4_6tppt")
+}, {
+"duration": 3.0,
+"texture": ExtResource("5_7hk54")
+}],
+"loop": false,
+"name": &"expand",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="BubbleExpand" type="AnimatedSprite2D" parent="."]
+position = Vector2(96, 96)
+scale = Vector2(0.625, 0.625)
+sprite_frames = SubResource("SpriteFrames_jkr7u")
+animation = &"expand"
+frame = 4
+frame_progress = 1.0

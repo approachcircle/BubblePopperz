@@ -1,8 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://brk2bm0b15fgb"]
+[gd_scene load_steps=4 format=3 uid="uid://brk2bm0b15fgb"]
 
-[ext_resource type="Script" path="res://scenes/bubble_spawner.gd" id="1_b1q6c"]
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_as6ul"]
+[ext_resource type="Script" path="res://scripts/bubble_spawner.gd" id="1_b1q6c"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_l6sbg"]
+font_size = 64
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_as6ul")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 856.0
+offset_top = 480.0
+offset_right = 1048.0
+offset_bottom = 576.0
+text = "game"
+label_settings = SubResource("LabelSettings_l6sbg")
 
 [node name="BubbleSpawner" type="Node" parent="."]
 script = ExtResource("1_b1q6c")

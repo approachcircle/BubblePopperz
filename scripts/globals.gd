@@ -1,12 +1,12 @@
 extends Node
 
-enum {
+enum GameMode {
 	Normal,
 	Limitless,
 	Powerless
 }
 
-var game_mode = Normal
+var current_game_mode = GameMode.Normal
 
 func _ready() -> void:
 	pass

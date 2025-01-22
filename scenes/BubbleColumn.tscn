@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=3 uid="uid://305lmx41bsni"]
+
+[ext_resource type="Script" path="res://scripts/bubble_column.gd" id="1_hqcpn"]
+[ext_resource type="Texture2D" uid="uid://dyxwgmeero1aa" path="res://assets/frame 0 bubble.png" id="2_vfjdr"]
+
+[sub_resource type="Animation" id="Animation_m2q03"]
+resource_name = "rise"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bubble:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1024, 920), Vector2(936, 816), Vector2(1096, 736), Vector2(896, 640), Vector2(1056, 560), Vector2(928, 496), Vector2(1088, 432), Vector2(920, 376), Vector2(1056, 296), Vector2(896, 184), Vector2(1032, 80)]
+}
+
+[sub_resource type="Animation" id="Animation_3bvd2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bubble:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1024, 920)]
+}
+
+[sub_resource type="Animation" id="Animation_ruxxx"]
+resource_name = "rise_alt"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bubble:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 1.96667, 2.5, 3, 3.5, 4, 4.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(792, 1048), Vector2(1112, 952), Vector2(832, 856), Vector2(1080, 816), Vector2(872, 720), Vector2(1056, 648), Vector2(800, 568), Vector2(1072, 472), Vector2(872, 328), Vector2(1024, 208), Vector2(784, 88)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6dsrm"]
+_data = {
+"RESET": SubResource("Animation_3bvd2"),
+"rise": SubResource("Animation_m2q03"),
+"rise_alt": SubResource("Animation_ruxxx")
+}
+
+[node name="BubbleColumns" type="Node2D"]
+script = ExtResource("1_hqcpn")
+
+[node name="Bubble" type="Sprite2D" parent="."]
+position = Vector2(1024, 920)
+texture = ExtResource("2_vfjdr")
+
+[node name="Animator" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6dsrm")
+}
