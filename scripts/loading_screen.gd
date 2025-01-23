@@ -7,6 +7,9 @@ func _ready() -> void:
 	spawn_bubbles()
 	var mode_label: Label = get_node("GameMode")
 	mode_label.text = "Game mode: " + Globals.GameMode.find_key(Globals.current_game_mode)
+	var tip: Label = get_node("Tip")
+	if Globals.current_game_mode == Globals.GameMode.Limitless:
+		tip.visible = true
 	thread = Thread.new()
 	var result = thread.start(load_game)
 	if result != OK:
@@ -21,12 +24,7 @@ func spawn_bubbles():
 		var column_node: Node2D = column.instantiate()
 		var vec = Vector2()
 		var scr_size = DisplayServer.window_get_size()
-		#vec.x = randi_range(0, scr_size.x - 100)
-		#vec.y = randi_range(0, scr_size.y - 100)
-		#vec.x = randi_range(0, 1920 + 200)
-		#vec.y = randi_range(-300, 1080)
 		vec.x = (i * 200) - 900
-		# vec.y = (i * 80) - 400
 		vec.y = 300
 		vec.y += randi_range(-1, -600)
 		
@@ -34,11 +32,6 @@ func spawn_bubbles():
 		column_node.z_index = -i
 		column_node.modulate.a = 0.25
 		self.add_child(column_node)
-	#for i in range(0, 4):
-		#var column: PackedScene = preload("res://scenes/BubbleColumn.tscn")
-		#var column_node = column.instantiate()
-		#var scr_size = DisplayServer.window_get_size()
-		#column_node.position
 
 func load_game():
 	scene = load("res://scenes/MainScene.tscn")

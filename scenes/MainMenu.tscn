@@ -28,7 +28,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1112, 808)]
+"values": [Vector2(1112, 704)]
 }
 
 [sub_resource type="Animation" id="Animation_dk4sv"]
@@ -44,7 +44,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.233333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1120, 808), Vector2(1552, 808)]
+"values": [Vector2(1112, 704), Vector2(1560, 704)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_82kjp"]
@@ -69,10 +69,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -148.0
-offset_top = -206.0
-offset_right = 152.0
-offset_bottom = -80.0
+offset_left = -144.0
+offset_top = -312.0
+offset_right = 144.0
+offset_bottom = -184.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("1_p6aqv")
@@ -94,51 +94,61 @@ label_settings = SubResource("LabelSettings_k4rd0")
 [node name="Gamemodes" type="CanvasGroup" parent="."]
 
 [node name="Line0" type="Line2D" parent="Gamemodes"]
-position = Vector2(1102, 881)
+position = Vector2(1094, 777)
 points = PackedVector2Array(20, 15, 92, 15, 92, -33, 244, -33)
 
 [node name="Line1" type="Line2D" parent="Gamemodes"]
-position = Vector2(1102, 922)
+position = Vector2(1094, 818)
 points = PackedVector2Array(20, 14, 92, 14, 244, 14)
 
 [node name="Line2" type="Line2D" parent="Gamemodes"]
-position = Vector2(1103, 993)
+position = Vector2(1095, 889)
 scale = Vector2(0.962478, -1.00107)
 points = PackedVector2Array(19.7407, 16.9819, 94.5476, 16.9819, 94.5476, -30.9668, 252.473, -30.9668)
 
 [node name="Normal" type="Button" parent="Gamemodes"]
-offset_left = 1346.0
-offset_top = 808.0
-offset_right = 1546.0
-offset_bottom = 888.0
+offset_left = 1338.0
+offset_top = 704.0
+offset_right = 1538.0
+offset_bottom = 784.0
 theme = SubResource("Theme_n1s2g")
 text = "Normal"
 
 [node name="Limitless" type="Button" parent="Gamemodes"]
-offset_left = 1346.0
-offset_top = 896.0
-offset_right = 1546.0
-offset_bottom = 976.0
+offset_left = 1338.0
+offset_top = 792.0
+offset_right = 1538.0
+offset_bottom = 872.0
 theme = SubResource("Theme_p6k0t")
 text = "Limitless"
 
 [node name="Powerless" type="Button" parent="Gamemodes"]
-offset_left = 1346.0
-offset_top = 984.0
-offset_right = 1546.0
-offset_bottom = 1064.0
+offset_left = 1338.0
+offset_top = 880.0
+offset_right = 1538.0
+offset_bottom = 960.0
 theme = SubResource("Theme_dhjx0")
+disabled = true
 text = "Powerless"
 
 [node name="ModesCover" type="ColorRect" parent="."]
 layout_mode = 0
 offset_left = 1112.0
-offset_top = 808.0
+offset_top = 704.0
 offset_right = 1552.0
-offset_bottom = 1064.0
+offset_bottom = 960.0
 color = Color(0, 0, 0, 1)
 
 [node name="Animator" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_82kjp")
 }
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 816.0
+offset_top = 928.0
+offset_right = 1104.0
+offset_bottom = 1056.0
+theme = ExtResource("1_p6aqv")
+text = "Quit"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b677utiigc6s7"]
+[gd_scene load_steps=6 format=3 uid="uid://b677utiigc6s7"]
 
 [ext_resource type="Script" path="res://scripts/loading_screen.gd" id="1_u4xg2"]
 [ext_resource type="Theme" uid="uid://c5ia32277hif5" path="res://ButtonLargeText.tres" id="1_yv5l1"]
@@ -8,6 +8,9 @@ default_font_size = 48
 
 [sub_resource type="Theme" id="Theme_erj5o"]
 default_font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_w5vmu"]
+font_size = 32
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -64,3 +67,16 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_erj5o")
 text = "Get ready..."
+
+[node name="Tip" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -232.0
+offset_right = 232.0
+offset_bottom = 37.0
+grow_horizontal = 2
+text = "Tip: In limitless mode, you can't die!"
+label_settings = SubResource("LabelSettings_w5vmu")

@@ -8,6 +8,8 @@ func _ready() -> void:
 	get_node("Gamemodes/Normal").pressed.connect(func lambda(): transfer_to_load(Globals.GameMode.Normal))
 	get_node("Gamemodes/Limitless").pressed.connect(func lambda(): transfer_to_load(Globals.GameMode.Limitless))
 	get_node("Gamemodes/Powerless").pressed.connect(func lambda(): transfer_to_load(Globals.GameMode.Powerless))
+	get_node("Quit").pressed.connect(func lambda(): get_tree().quit())
+	Globals.load_defaults()
 
 func slide_cover():
 	var animator: AnimationPlayer = get_node("Animator")

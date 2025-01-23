@@ -1,0 +1,95 @@
+[gd_scene load_steps=7 format=3 uid="uid://ccflgxvwru0gw"]
+
+[ext_resource type="Texture2D" uid="uid://b6vaoo6ppt84x" path="res://assets/Heart.png" id="1_2svxs"]
+[ext_resource type="Script" path="res://scripts/health_display.gd" id="1_t071p"]
+
+[sub_resource type="Animation" id="Animation_ek06t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Health:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(96, 96)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Health:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.25, 0.25)]
+}
+
+[sub_resource type="Animation" id="Animation_47xs4"]
+resource_name = "center"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Health:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(96, 96), Vector2(960, -312)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Health:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.25, 0.25), Vector2(0.75, 0.75)]
+}
+
+[sub_resource type="Animation" id="Animation_r6gpl"]
+resource_name = "shake"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Health:position")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.4, 0.5, 0.6, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(960, -312), Vector2(896, -240), Vector2(960, -312), Vector2(960, -312), Vector2(960, -344), Vector2(960, -312), Vector2(960, -312), Vector2(1000, -256), Vector2(960, -312)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jx0vc"]
+_data = {
+"RESET": SubResource("Animation_ek06t"),
+"center": SubResource("Animation_47xs4"),
+"shake": SubResource("Animation_r6gpl")
+}
+
+[node name="HealthDisplay" type="Node2D"]
+position = Vector2(0, 888)
+script = ExtResource("1_t071p")
+
+[node name="Health" type="Sprite2D" parent="."]
+position = Vector2(96, 96)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_2svxs")
+
+[node name="Animator" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jx0vc")
+}
