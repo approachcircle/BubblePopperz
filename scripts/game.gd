@@ -2,7 +2,7 @@ extends Node2D
 
 var default_spawn_time = 1.5
 var spawn_time = default_spawn_time
-var diff_cap = 0.3
+var diff_cap = 0.35
 
 func _ready() -> void:
 	if Globals.current_game_mode != Globals.GameMode.Limitless:
