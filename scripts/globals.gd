@@ -6,6 +6,12 @@ enum GameMode {
 	Powerless
 }
 
+enum PowerUp {
+	Freeze,
+	Nuke,
+	Shield
+}
+
 var current_game_mode = GameMode.Normal
 var health = 1.0
 

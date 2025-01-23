@@ -15,9 +15,10 @@ func start_spawn_bubbles():
 		if Globals.health <= 0:
 			break
 		var difficulty: Label = get_node("Difficulty")
-		var readable_diff = str((default_spawn_time - spawn_time) * 1000)
-		difficulty.text = "Difficulty: " + str(snapped((default_spawn_time - spawn_time) * 1000, 0.1))
-		if str(snapped((default_spawn_time - spawn_time) * 1000, 0.1)) == str(snapped((default_spawn_time - diff_cap) * 1000, 0.1)):
+		var readable_diff = str(snapped((default_spawn_time - spawn_time) * 1000, 0.1))
+		var readable_diff_cap = str(snapped((default_spawn_time - diff_cap) * 1000, 0.1))
+		difficulty.text = "Difficulty: " + readable_diff
+		if readable_diff == readable_diff_cap:
 			difficulty.text = difficulty.text + " (MAX)"
 		var bubble: PackedScene = preload("res://scenes/ExpandingBubble.tscn")
 		var bubble_node: Node2D = bubble.instantiate()

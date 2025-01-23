@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://mjpp581famsg"]
+
+[ext_resource type="Texture2D" uid="uid://ma5u3rdd8icg" path="res://assets/circle.png" id="1_rlask"]
+
+[node name="PowerUpDisplay" type="Node2D"]
+
+[node name="One" type="Sprite2D" parent="."]
+position = Vector2(1822.5, 97.3569)
+scale = Vector2(1.89, 1.89433)
+texture = ExtResource("1_rlask")
+
+[node name="Two" type="Sprite2D" parent="."]
+position = Vector2(1632, 96)
+scale = Vector2(1.89, 1.89433)
+texture = ExtResource("1_rlask")
+
+[node name="Three" type="Sprite2D" parent="."]
+position = Vector2(1440, 96)
+scale = Vector2(1.89, 1.89433)
+texture = ExtResource("1_rlask")
