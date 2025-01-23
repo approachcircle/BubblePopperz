@@ -1,20 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://mjpp581famsg"]
+[gd_scene load_steps=3 format=3 uid="uid://mjpp581famsg"]
 
 [ext_resource type="Texture2D" uid="uid://ma5u3rdd8icg" path="res://assets/circle.png" id="1_rlask"]
+[ext_resource type="Theme" uid="uid://c5ia32277hif5" path="res://ButtonLargeText.tres" id="2_26uc2"]
 
 [node name="PowerUpDisplay" type="Node2D"]
 
 [node name="One" type="Sprite2D" parent="."]
-position = Vector2(1822.5, 97.3569)
-scale = Vector2(1.89, 1.89433)
+position = Vector2(1854.5, 65.2836)
+scale = Vector2(1.25, 1.25286)
 texture = ExtResource("1_rlask")
 
 [node name="Two" type="Sprite2D" parent="."]
-position = Vector2(1632, 96)
-scale = Vector2(1.89, 1.89433)
+position = Vector2(1728, 64)
+scale = Vector2(1.265, 1.2679)
 texture = ExtResource("1_rlask")
 
 [node name="Three" type="Sprite2D" parent="."]
-position = Vector2(1440, 96)
-scale = Vector2(1.89, 1.89433)
+position = Vector2(1600, 64)
+scale = Vector2(1.265, 1.26716)
 texture = ExtResource("1_rlask")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1552.0
+offset_top = 104.0
+offset_right = 1897.0
+offset_bottom = 203.0
+theme = ExtResource("2_26uc2")
+text = "Powerups"
