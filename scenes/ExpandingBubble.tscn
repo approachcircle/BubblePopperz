@@ -1,10 +1,43 @@
-[gd_scene load_steps=7 format=3 uid="uid://comd4duiogx50"]
+[gd_scene load_steps=15 format=3 uid="uid://comd4duiogx50"]
 
 [ext_resource type="Texture2D" uid="uid://dyxwgmeero1aa" path="res://assets/frame 0 bubble.png" id="1_3uqim"]
+[ext_resource type="Script" path="res://scripts/expanding_bubble.gd" id="1_pqg5p"]
+[ext_resource type="Texture2D" uid="uid://b5fgoqak0lnq8" path="res://assets/Pop Animation/pop3.png" id="1_r8y41"]
 [ext_resource type="Texture2D" uid="uid://caw8quotb0bou" path="res://assets/frame 1 bubble.png" id="2_4va3m"]
+[ext_resource type="Texture2D" uid="uid://bcywiab6os8hs" path="res://assets/Pop Animation/pop4.png" id="2_d0lbp"]
 [ext_resource type="Texture2D" uid="uid://dlkd7lw68gtcy" path="res://assets/frame 2 bubble.png" id="3_6ir74"]
+[ext_resource type="Texture2D" uid="uid://e8kngl8m43gq" path="res://assets/Pop Animation/pop5.png" id="3_helb1"]
 [ext_resource type="Texture2D" uid="uid://y15wogtbi7bv" path="res://assets/frame 3 bubble.png" id="4_6tppt"]
+[ext_resource type="Texture2D" uid="uid://b5ma6ot1xed00" path="res://assets/Pop Animation/pop6.png" id="4_r5hcl"]
 [ext_resource type="Texture2D" uid="uid://bcyufv8yd74pp" path="res://assets/frame 4 bubble.png" id="5_7hk54"]
+[ext_resource type="Texture2D" uid="uid://eduxpikynaqs" path="res://assets/Pop Animation/pop7.png" id="5_eengo"]
+[ext_resource type="Texture2D" uid="uid://vvyv7lemxaqc" path="res://assets/Pop Animation/pop8.png" id="6_rg4vd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0tma2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_r8y41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_d0lbp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_helb1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_r5hcl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_eengo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_rg4vd")
+}],
+"loop": false,
+"name": &"pop",
+"speed": 20.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jkr7u"]
 animations = [{
@@ -30,6 +63,12 @@ animations = [{
 }]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_pqg5p")
+
+[node name="BubblePop" type="AnimatedSprite2D" parent="."]
+position = Vector2(96, 96)
+sprite_frames = SubResource("SpriteFrames_0tma2")
+animation = &"pop"
 
 [node name="BubbleExpand" type="AnimatedSprite2D" parent="."]
 position = Vector2(96, 96)
@@ -38,3 +77,9 @@ sprite_frames = SubResource("SpriteFrames_jkr7u")
 animation = &"expand"
 frame = 4
 frame_progress = 1.0
+
+[node name="Clickable" type="Button" parent="."]
+offset_left = 40.0
+offset_top = 32.0
+offset_right = 152.0
+offset_bottom = 144.0

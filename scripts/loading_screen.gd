@@ -44,9 +44,6 @@ func load_game():
 	scene = load("res://scenes/MainScene.tscn")
 	
 func transfer():
-	if scene == null:
-		printerr("yeahhh that aint good")
-		get_tree().quit(1)
 	await get_tree().create_timer(4).timeout
 	var result = get_tree().change_scene_to_packed(scene)
 	if result != OK:

@@ -1,9 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://b677utiigc6s7"]
+[gd_scene load_steps=5 format=3 uid="uid://b677utiigc6s7"]
 
 [ext_resource type="Script" path="res://scripts/loading_screen.gd" id="1_u4xg2"]
 [ext_resource type="Theme" uid="uid://c5ia32277hif5" path="res://ButtonLargeText.tres" id="1_yv5l1"]
 
 [sub_resource type="Theme" id="Theme_62cga"]
+default_font_size = 48
+
+[sub_resource type="Theme" id="Theme_erj5o"]
 default_font_size = 48
 
 [node name="Control" type="Control"]
@@ -45,3 +48,19 @@ grow_horizontal = 2
 grow_vertical = 0
 theme = SubResource("Theme_62cga")
 text = "Game mode: Normal"
+
+[node name="Ready" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = 44.0
+offset_right = 140.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_erj5o")
+text = "Get ready..."
