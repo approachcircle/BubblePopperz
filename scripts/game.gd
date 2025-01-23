@@ -1,6 +1,6 @@
 extends Node2D
 
-var spawn_time = 2
+var spawn_time = 1.5
 
 func _ready() -> void:
 	start_spawn_bubbles()
@@ -19,7 +19,7 @@ func start_spawn_bubbles():
 		self.add_child(timer)
 		timer.start(spawn_time)
 		await timer.timeout
-		spawn_time -= 0.1
+		# spawn_time -= 0.1
 
 
 func _process(delta: float) -> void:
