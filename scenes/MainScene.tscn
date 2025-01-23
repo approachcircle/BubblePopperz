@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://brk2bm0b15fgb"]
+[gd_scene load_steps=4 format=3 uid="uid://brk2bm0b15fgb"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_as6ul"]
+[ext_resource type="Texture2D" uid="uid://dsojkgj3yjqo2" path="res://assets/equipment/Kap.png" id="2_65xrm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_hsfgu"]
 font_size = 40
@@ -21,3 +22,8 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Difficulty: ?"
 label_settings = SubResource("LabelSettings_hsfgu")
+
+[node name="Kapkan" type="Sprite2D" parent="."]
+position = Vector2(1776, 880)
+scale = Vector2(1.54, 1.54)
+texture = ExtResource("2_65xrm")

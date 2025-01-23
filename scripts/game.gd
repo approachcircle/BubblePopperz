@@ -24,8 +24,8 @@ func start_spawn_bubbles():
 		bubble_node.bubble_missed.connect(func lambda(): bubble_missed(bubble_node))
 		var vec = Vector2()
 		var scr_size = DisplayServer.window_get_size()
-		vec.x = randi_range(0, scr_size.x - 200)
-		vec.y = randi_range(0, scr_size.y - 200)
+		vec.x = randi_range(0, scr_size.x - 400)
+		vec.y = randi_range(0, scr_size.y - 400)
 		bubble_node.position = vec
 		self.add_child(bubble_node)
 		var timer: Timer = Timer.new()
@@ -33,7 +33,7 @@ func start_spawn_bubbles():
 		timer.start(spawn_time)
 		await timer.timeout
 		if spawn_time > diff_cap:
-			spawn_time -= 0.01
+			spawn_time -= 0.03
 		
 func bubble_missed(bubble: Node2D):
 	var missed: PackedScene = preload("res://scenes/BubbleMissed.tscn")
