@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://comd4duiogx50"]
+[gd_scene load_steps=20 format=3 uid="uid://comd4duiogx50"]
 
 [ext_resource type="Texture2D" uid="uid://dyxwgmeero1aa" path="res://assets/frame 0 bubble.png" id="1_3uqim"]
 [ext_resource type="Script" path="res://scripts/expanding_bubble.gd" id="1_pqg5p"]
@@ -12,6 +12,11 @@
 [ext_resource type="Texture2D" uid="uid://bcyufv8yd74pp" path="res://assets/frame 4 bubble.png" id="5_7hk54"]
 [ext_resource type="Texture2D" uid="uid://eduxpikynaqs" path="res://assets/Pop Animation/pop7.png" id="5_eengo"]
 [ext_resource type="Texture2D" uid="uid://vvyv7lemxaqc" path="res://assets/Pop Animation/pop8.png" id="6_rg4vd"]
+[ext_resource type="Texture2D" uid="uid://210k775otju1" path="res://assets/all shield bubble frames/shield bubble frame 0.png" id="13_cejo3"]
+[ext_resource type="Texture2D" uid="uid://cxsrr3qr687l" path="res://assets/all shield bubble frames/shield bubble frame 1.png" id="14_77xil"]
+[ext_resource type="Texture2D" uid="uid://b6780m8koxpsp" path="res://assets/all shield bubble frames/shield bubble frame 2.png" id="15_rlbll"]
+[ext_resource type="Texture2D" uid="uid://blh20cx1jdrx7" path="res://assets/all shield bubble frames/shield bubble frame 3.png" id="16_51fkq"]
+[ext_resource type="Texture2D" uid="uid://e742xy0f2cmv" path="res://assets/all shield bubble frames/shield bubble frame 4.png" id="17_li3yu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0tma2"]
 animations = [{
@@ -58,7 +63,37 @@ animations = [{
 "texture": ExtResource("5_7hk54")
 }],
 "loop": false,
-"name": &"expand",
+"name": &"base",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"freeze",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"nuke",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 3.0,
+"texture": ExtResource("13_cejo3")
+}, {
+"duration": 3.0,
+"texture": ExtResource("14_77xil")
+}, {
+"duration": 3.0,
+"texture": ExtResource("15_rlbll")
+}, {
+"duration": 3.0,
+"texture": ExtResource("16_51fkq")
+}, {
+"duration": 3.0,
+"texture": ExtResource("17_li3yu")
+}],
+"loop": false,
+"name": &"shield",
 "speed": 5.0
 }]
 
@@ -74,9 +109,7 @@ animation = &"pop"
 position = Vector2(96, 96)
 scale = Vector2(0.625, 0.625)
 sprite_frames = SubResource("SpriteFrames_jkr7u")
-animation = &"expand"
-frame = 4
-frame_progress = 1.0
+animation = &"shield"
 
 [node name="Clickable" type="Button" parent="."]
 offset_left = 40.0

@@ -11,7 +11,18 @@ func _ready() -> void:
 	clickable.modulate.a = 0
 	var pop: AnimatedSprite2D = get_node("BubblePop")
 	pop.modulate.a = 0
-	bubble.play("expand")
+	assert(Globals.current_power_up != null)
+	print("current set powerup: " + str(Globals.PowerUp.find_key(Globals.current_power_up)))
+	match Globals.current_power_up:
+		Globals.PowerUp.Normal:
+			bubble.play("base")
+			print("none")
+		Globals.PowerUp.Shield:
+			bubble.play("shield")
+			print("shield")
+		_:
+			bubble.play("base")
+			print("other power up")
 	bubble.animation_finished.connect(bubble_missed.emit)
 
 func bubble_popped():

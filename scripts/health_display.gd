@@ -10,7 +10,7 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	var health: Sprite2D = get_node("Health")
+	health = get_node("Health")
 	#match Globals.health:
 		#1.0:
 			#health.texture = load("res://assets/Heart.png")
