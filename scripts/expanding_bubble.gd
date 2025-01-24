@@ -1,7 +1,9 @@
 extends Node2D
 
 var bubble: AnimatedSprite2D
+var type: Globals.PowerUp
 signal bubble_missed
+signal on_bubble_popped(bubble_type: Globals.PowerUp)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,13 +18,13 @@ func _ready() -> void:
 	match Globals.current_power_up:
 		Globals.PowerUp.Normal:
 			bubble.play("base")
-			print("none")
 		Globals.PowerUp.Shield:
 			bubble.play("shield")
-			print("shield")
+		Globals.PowerUp.Nuke:
+			bubble.play("nuke")
 		_:
 			bubble.play("base")
-			print("other power up")
+	type = Globals.current_power_up
 	bubble.animation_finished.connect(bubble_missed.emit)
 
 func bubble_popped():
@@ -33,6 +35,7 @@ func bubble_popped():
 	pop.play("pop")
 	await pop.animation_finished
 	self.queue_free()
+	on_bubble_popped.emit(type)
 	
 func _process(delta: float) -> void:
 	pass
