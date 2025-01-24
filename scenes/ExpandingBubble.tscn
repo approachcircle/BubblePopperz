@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://comd4duiogx50"]
+[gd_scene load_steps=25 format=3 uid="uid://comd4duiogx50"]
 
 [ext_resource type="Texture2D" uid="uid://dyxwgmeero1aa" path="res://assets/frame 0 bubble.png" id="1_3uqim"]
 [ext_resource type="Script" path="res://scripts/expanding_bubble.gd" id="1_pqg5p"]
@@ -13,10 +13,15 @@
 [ext_resource type="Texture2D" uid="uid://eduxpikynaqs" path="res://assets/Pop Animation/pop7.png" id="5_eengo"]
 [ext_resource type="Texture2D" uid="uid://vvyv7lemxaqc" path="res://assets/Pop Animation/pop8.png" id="6_rg4vd"]
 [ext_resource type="Texture2D" uid="uid://210k775otju1" path="res://assets/all shield bubble frames/shield bubble frame 0.png" id="13_cejo3"]
+[ext_resource type="Texture2D" uid="uid://domt87ff4hfov" path="res://assets/Nuke Bubbles/Finam_Nuke_Bubble(Frame0).png" id="13_slx0h"]
 [ext_resource type="Texture2D" uid="uid://cxsrr3qr687l" path="res://assets/all shield bubble frames/shield bubble frame 1.png" id="14_77xil"]
+[ext_resource type="Texture2D" uid="uid://bk35jbm8qtgd0" path="res://assets/Nuke Bubbles/Finam_Nuke_Bubble(Frame1).png" id="14_xmkvp"]
 [ext_resource type="Texture2D" uid="uid://b6780m8koxpsp" path="res://assets/all shield bubble frames/shield bubble frame 2.png" id="15_rlbll"]
+[ext_resource type="Texture2D" uid="uid://b8wkjjtrx4ts2" path="res://assets/Nuke Bubbles/Finam_Nuke_Bubble(Frame2).png" id="15_uofap"]
 [ext_resource type="Texture2D" uid="uid://blh20cx1jdrx7" path="res://assets/all shield bubble frames/shield bubble frame 3.png" id="16_51fkq"]
+[ext_resource type="Texture2D" uid="uid://0ldcg8gpf7pu" path="res://assets/Nuke Bubbles/Finam_Nuke_Bubble(Frame3).png" id="16_erq2n"]
 [ext_resource type="Texture2D" uid="uid://e742xy0f2cmv" path="res://assets/all shield bubble frames/shield bubble frame 4.png" id="17_li3yu"]
+[ext_resource type="Texture2D" uid="uid://dukuqusntvbd3" path="res://assets/Nuke Bubbles/Finam_Nuke_Bubble(Frame4).png" id="17_ug46h"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0tma2"]
 animations = [{
@@ -71,8 +76,23 @@ animations = [{
 "name": &"freeze",
 "speed": 5.0
 }, {
-"frames": [],
-"loop": true,
+"frames": [{
+"duration": 4.0,
+"texture": ExtResource("13_slx0h")
+}, {
+"duration": 4.0,
+"texture": ExtResource("14_xmkvp")
+}, {
+"duration": 4.0,
+"texture": ExtResource("15_uofap")
+}, {
+"duration": 4.0,
+"texture": ExtResource("16_erq2n")
+}, {
+"duration": 4.0,
+"texture": ExtResource("17_ug46h")
+}],
+"loop": false,
 "name": &"nuke",
 "speed": 5.0
 }, {
@@ -109,7 +129,9 @@ animation = &"pop"
 position = Vector2(96, 96)
 scale = Vector2(0.625, 0.625)
 sprite_frames = SubResource("SpriteFrames_jkr7u")
-animation = &"shield"
+animation = &"nuke"
+frame = 4
+frame_progress = 1.0
 
 [node name="Clickable" type="Button" parent="."]
 offset_left = 40.0

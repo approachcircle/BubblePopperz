@@ -10,12 +10,12 @@ func _ready() -> void:
 		var health_display: PackedScene = preload("res://scenes/HealthDisplay.tscn")
 		self.add_child(health_display.instantiate())
 	if Globals.current_game_mode != Globals.GameMode.Powerless:
-		pass
-		# var power_up_display: PackedScene = preload("res://scenes/PowerUpDisplay.tscn")
-		# self.add_child(power_up_display.instantiate())
+		var power_up_display: PackedScene = preload("res://scenes/PowerUpDisplay.tscn")
+		self.add_child(power_up_display.instantiate())
 		# TODO: auto add power up display by the end, display will always be visible
 		# for now
 	start_spawn_bubbles()
+	
 	
 func start_spawn_bubbles():
 	while true:
@@ -31,6 +31,7 @@ func start_spawn_bubbles():
 		var bubble: PackedScene = preload("res://scenes/ExpandingBubble.tscn")
 		var bubble_node: Node2D = bubble.instantiate()
 		bubble_node.bubble_missed.connect(func lambda(): bubble_missed(bubble_node))
+		bubble_node.on_bubble_popped.connect(func lambda(type: Globals.PowerUp): Globals.powerups.append(type))
 		var vec = Vector2()
 		var scr_size = DisplayServer.window_get_size()
 		var sidebar: ColorRect = get_node("Sidebar")
