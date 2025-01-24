@@ -40,7 +40,7 @@ func heartbroken():
 	self.add_child(timer)
 	timer.start(1)
 	await timer.timeout
-	health.texture = load("res://assets/heartbreak.png")
+	health.texture = load("res://assets/Brokenheart.png")
 	timer.start(2)
 	await timer.timeout
 	get_tree().change_scene_to_file("res://scenes/GameOver.tscn")
