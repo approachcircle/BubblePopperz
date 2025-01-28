@@ -1,4 +1,5 @@
 extends Node2D
+class_name Bubble
 
 var bubble: AnimatedSprite2D
 var type: Globals.PowerUp
@@ -22,6 +23,8 @@ func _ready() -> void:
 			bubble.play("shield")
 		Globals.PowerUp.Nuke:
 			bubble.play("nuke")
+		Globals.PowerUp.Freeze:
+			bubble.play("freeze")
 		_:
 			bubble.play("base")
 	type = Globals.current_power_up
