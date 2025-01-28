@@ -9,6 +9,7 @@ func _ready() -> void:
 	get_node("Gamemodes/Limitless").pressed.connect(func lambda(): transfer_to_load(Globals.GameMode.Limitless))
 	get_node("Gamemodes/Powerless").pressed.connect(func lambda(): transfer_to_load(Globals.GameMode.Powerless))
 	get_node("Quit").pressed.connect(func lambda(): get_tree().quit())
+	get_node("Tutorial").pressed.connect(func lambda(): get_tree().change_scene_to_file("res://scenes/Lessons/Intro.tscn"))
 	Globals.load_defaults()
 
 func slide_cover():

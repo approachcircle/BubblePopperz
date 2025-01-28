@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtbcd77jdir8p"]
+
+[ext_resource type="Script" path="res://scripts/lesson_nav.gd" id="1_j0ydm"]
+[ext_resource type="Theme" uid="uid://c5ia32277hif5" path="res://ButtonLargeText.tres" id="1_t627d"]
+
+[node name="LessonNav" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j0ydm")
+
+[node name="Back" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 128.0
+offset_top = 832.0
+offset_right = 416.0
+offset_bottom = 960.0
+theme = ExtResource("1_t627d")
+text = "Back"
+
+[node name="Next" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1504.0
+offset_top = 832.0
+offset_right = 1792.0
+offset_bottom = 960.0
+theme = ExtResource("1_t627d")
+text = "Next"

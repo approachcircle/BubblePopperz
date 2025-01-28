@@ -7,46 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://bo6pbf2cu06pp" path="res://assets/powerups/freeze.png" id="4_5ccna"]
 [ext_resource type="Texture2D" uid="uid://cs21qtlsfdy35" path="res://assets/powerups/nuke.png" id="5_n0api"]
 
-[sub_resource type="Animation" id="Animation_fpwd8"]
-resource_name = "use_shield"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BigShield:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1600, 64), Vector2(960, 576)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("BigShield:scale")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0.343458, 0.343458), Vector2(2.15304, 2.15304)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("BigShield:modulate")
-tracks/2/interp = 2
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.196078)]
-}
-
 [sub_resource type="Animation" id="Animation_xqs4n"]
 length = 0.001
 tracks/0/type = "value"
@@ -162,6 +122,46 @@ tracks/2/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.294118)]
 }
 
+[sub_resource type="Animation" id="Animation_fpwd8"]
+resource_name = "use_shield"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BigShield:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1600, 64), Vector2(960, 576)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BigShield:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.343458, 0.343458), Vector2(2.15304, 2.15304)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BigShield:modulate")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.196078)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tl8po"]
 _data = {
 "RESET": SubResource("Animation_xqs4n"),
@@ -214,11 +214,13 @@ offset_right = 1768.0
 offset_bottom = 104.0
 
 [node name="Shield" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(1600, 64)
 scale = Vector2(0.343458, 0.343458)
 texture = ExtResource("3_2nrwg")
 
 [node name="BigShield" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(1600, 64)
 scale = Vector2(0.343458, 0.343458)
 texture = ExtResource("3_2nrwg")
@@ -234,6 +236,7 @@ scale = Vector2(0.156542, 0.156542)
 texture = ExtResource("4_5ccna")
 
 [node name="Nuke" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(1856, 64)
 scale = Vector2(0.770349, 0.770349)
 texture = ExtResource("5_n0api")
