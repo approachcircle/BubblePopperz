@@ -128,7 +128,6 @@ offset_top = 880.0
 offset_right = 1538.0
 offset_bottom = 960.0
 theme = SubResource("Theme_dhjx0")
-disabled = true
 text = "Powerless"
 
 [node name="ModesCover" type="ColorRect" parent="."]
@@ -152,3 +151,12 @@ offset_right = 1104.0
 offset_bottom = 1056.0
 theme = ExtResource("1_p6aqv")
 text = "Quit"
+
+[node name="Tutorial" type="Button" parent="."]
+layout_mode = 0
+offset_left = 816.0
+offset_top = 608.0
+offset_right = 1104.0
+offset_bottom = 736.0
+theme = ExtResource("1_p6aqv")
+text = "Tutorial"

@@ -1,20 +1,272 @@
-[gd_scene load_steps=2 format=3 uid="uid://mjpp581famsg"]
+[gd_scene load_steps=12 format=3 uid="uid://mjpp581famsg"]
 
+[ext_resource type="Script" path="res://scripts/power_up_display.gd" id="1_dhp6e"]
 [ext_resource type="Texture2D" uid="uid://ma5u3rdd8icg" path="res://assets/circle.png" id="1_rlask"]
+[ext_resource type="Theme" uid="uid://c5ia32277hif5" path="res://ButtonLargeText.tres" id="2_26uc2"]
+[ext_resource type="Texture2D" uid="uid://r4th0vc78j54" path="res://assets/powerups/shield.PNG" id="3_2nrwg"]
+[ext_resource type="Texture2D" uid="uid://bo6pbf2cu06pp" path="res://assets/powerups/freeze.png" id="4_5ccna"]
+[ext_resource type="Texture2D" uid="uid://cs21qtlsfdy35" path="res://assets/powerups/nuke.png" id="5_n0api"]
+[ext_resource type="LabelSettings" uid="uid://bes7hnw4oc8wl" path="res://TutorialParagraph.tres" id="7_itynl"]
+
+[sub_resource type="Animation" id="Animation_xqs4n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BigShield:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1600, 64)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BigShield:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.343458, 0.343458)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BigShield:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BigFreeze:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1728, 64)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BigFreeze:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.156542, 0.156542)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("BigFreeze:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vhfo5"]
+resource_name = "use_freeze"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BigFreeze:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1728, 64), Vector2(960, -64), Vector2(960, 512)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BigFreeze:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.156542, 0.156542), Vector2(0.900701, 0.900701)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BigFreeze:modulate")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.294118)]
+}
+
+[sub_resource type="Animation" id="Animation_fpwd8"]
+resource_name = "use_shield"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BigShield:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1600, 64), Vector2(960, 576)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BigShield:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.343458, 0.343458), Vector2(2.15304, 2.15304)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BigShield:modulate")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.196078)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tl8po"]
+_data = {
+"RESET": SubResource("Animation_xqs4n"),
+"use_freeze": SubResource("Animation_vhfo5"),
+"use_shield": SubResource("Animation_fpwd8")
+}
 
 [node name="PowerUpDisplay" type="Node2D"]
+script = ExtResource("1_dhp6e")
 
 [node name="One" type="Sprite2D" parent="."]
-position = Vector2(1822.5, 97.3569)
-scale = Vector2(1.89, 1.89433)
+position = Vector2(1854.5, 65.2836)
+scale = Vector2(1.25, 1.25286)
 texture = ExtResource("1_rlask")
 
 [node name="Two" type="Sprite2D" parent="."]
-position = Vector2(1632, 96)
-scale = Vector2(1.89, 1.89433)
+position = Vector2(1728, 64)
+scale = Vector2(1.265, 1.2679)
 texture = ExtResource("1_rlask")
 
 [node name="Three" type="Sprite2D" parent="."]
-position = Vector2(1440, 96)
-scale = Vector2(1.89, 1.89433)
+position = Vector2(1600, 64)
+scale = Vector2(1.265, 1.26716)
 texture = ExtResource("1_rlask")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1552.0
+offset_top = 152.0
+offset_right = 1897.0
+offset_bottom = 251.0
+theme = ExtResource("2_26uc2")
+text = "Powerups"
+
+[node name="ShieldButton" type="Button" parent="."]
+offset_left = 1560.0
+offset_top = 24.0
+offset_right = 1640.0
+offset_bottom = 104.0
+
+[node name="NukeButton" type="Button" parent="."]
+offset_left = 1816.0
+offset_top = 24.0
+offset_right = 1896.0
+offset_bottom = 104.0
+
+[node name="FreezeButton" type="Button" parent="."]
+offset_left = 1688.0
+offset_top = 24.0
+offset_right = 1768.0
+offset_bottom = 104.0
+
+[node name="Shield" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1600, 64)
+scale = Vector2(0.343458, 0.343458)
+texture = ExtResource("3_2nrwg")
+
+[node name="BigShield" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1600, 64)
+scale = Vector2(0.343458, 0.343458)
+texture = ExtResource("3_2nrwg")
+
+[node name="Freeze" type="Sprite2D" parent="."]
+position = Vector2(1728, 64)
+scale = Vector2(0.156542, 0.156542)
+texture = ExtResource("4_5ccna")
+
+[node name="BigFreeze" type="Sprite2D" parent="."]
+position = Vector2(1728, 64)
+scale = Vector2(0.156542, 0.156542)
+texture = ExtResource("4_5ccna")
+
+[node name="Nuke" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1856, 64)
+scale = Vector2(0.770349, 0.770349)
+texture = ExtResource("5_n0api")
+
+[node name="Animator" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_tl8po")
+}
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 1588.0
+offset_top = 112.0
+offset_right = 1612.0
+offset_bottom = 170.0
+text = "1"
+label_settings = ExtResource("7_itynl")
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 1716.0
+offset_top = 112.0
+offset_right = 1740.0
+offset_bottom = 170.0
+text = "2"
+label_settings = ExtResource("7_itynl")
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 1844.0
+offset_top = 112.0
+offset_right = 1868.0
+offset_bottom = 170.0
+text = "3"
+label_settings = ExtResource("7_itynl")

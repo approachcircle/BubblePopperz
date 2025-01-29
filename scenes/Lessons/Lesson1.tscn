@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://cx83wntgo7ajq"]
+
+[ext_resource type="Script" path="res://scripts/lesson_1.gd" id="1_h7s2v"]
+[ext_resource type="Theme" uid="uid://c5ia32277hif5" path="res://ButtonLargeText.tres" id="1_oplai"]
+[ext_resource type="PackedScene" uid="uid://dtbcd77jdir8p" path="res://scenes/Lessons/LessonNav.tscn" id="2_ji0b6"]
+[ext_resource type="LabelSettings" uid="uid://bes7hnw4oc8wl" path="res://TutorialParagraph.tres" id="4_x1166"]
+
+[node name="Lesson1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h7s2v")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -259.0
+offset_right = 259.0
+offset_bottom = 99.0
+grow_horizontal = 2
+theme = ExtResource("1_oplai")
+text = "Core gameplay"
+
+[node name="LessonNav" parent="." instance=ExtResource("2_ji0b6")]
+layout_mode = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 192.0
+offset_right = 1848.0
+offset_bottom = 372.0
+text = "Try clicking the bubbles that appear below. If you don't click them in time, you'll notice a miss indicator will appear where the bubble used to be. During gameplay, these bubbles will also spawn faster and faster exponentially. (Don't worry, there is a cap). Once you're finished, press \"Next\"."
+label_settings = ExtResource("4_x1166")
+autowrap_mode = 3

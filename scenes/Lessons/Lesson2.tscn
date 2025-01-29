@@ -1,0 +1,115 @@
+[gd_scene load_steps=13 format=3 uid="uid://0kg53xb31abb"]
+
+[ext_resource type="Theme" uid="uid://c5ia32277hif5" path="res://ButtonLargeText.tres" id="1_6gemr"]
+[ext_resource type="LabelSettings" uid="uid://bes7hnw4oc8wl" path="res://TutorialParagraph.tres" id="2_4nlm2"]
+[ext_resource type="Texture2D" uid="uid://14wkvd6h4dw4" path="res://assets/Nuke Bubbles/Finam_Nuke_Bubble(Frame4).png" id="3_vf16k"]
+[ext_resource type="Texture2D" uid="uid://dedmjd8sb3pc8" path="res://assets/small bubbles/Ice_bubble.png" id="4_kqat4"]
+[ext_resource type="Texture2D" uid="uid://ddc7noko22f17" path="res://assets/final bubbles/Final shield bubble.png" id="5_ha44r"]
+[ext_resource type="Texture2D" uid="uid://cs21qtlsfdy35" path="res://assets/powerups/nuke.png" id="6_hyeg7"]
+[ext_resource type="Texture2D" uid="uid://bo6pbf2cu06pp" path="res://assets/powerups/freeze.png" id="7_52ree"]
+[ext_resource type="Texture2D" uid="uid://r4th0vc78j54" path="res://assets/powerups/shield.PNG" id="8_sfhju"]
+[ext_resource type="PackedScene" uid="uid://dtbcd77jdir8p" path="res://scenes/Lessons/LessonNav.tscn" id="9_3vyhp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ej5ec"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_ac2qj"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_hb5je"]
+font_size = 32
+
+[node name="Lesson2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -303.0
+offset_right = 303.0
+offset_bottom = 99.0
+grow_horizontal = 2
+theme = ExtResource("1_6gemr")
+text = "Powerup bubbles"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 200.0
+offset_right = 1848.0
+offset_bottom = 400.0
+text = "Now we'll cover powerup bubbles. These are a special type of bubble which upon being popped, will drop its corresponding powerup to be used to gain an advantage in-game. You can either click these powerups on the top right of your screen, or use the number keys. The three types of powerup bubble and powerup are displayed below:"
+label_settings = ExtResource("2_4nlm2")
+autowrap_mode = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(317.032, 632)
+texture = ExtResource("3_vf16k")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(893.032, 640)
+texture = ExtResource("4_kqat4")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(1413.03, 624)
+texture = ExtResource("5_ha44r")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(520, 640)
+scale = Vector2(1.70349, 1.70349)
+texture = ExtResource("6_hyeg7")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(1088, 640)
+scale = Vector2(0.343458, 0.343458)
+texture = ExtResource("7_52ree")
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+position = Vector2(1600, 640)
+texture = ExtResource("8_sfhju")
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 488.0
+offset_right = 680.0
+offset_bottom = 546.0
+text = "Instantly pops all bubbles on screen"
+label_settings = SubResource("LabelSettings_ej5ec")
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -376.0
+offset_top = -336.0
+offset_right = 324.0
+offset_bottom = -224.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Freezes bubbles on screen and prevents new bubbles from spawning for three seconds"
+label_settings = SubResource("LabelSettings_ac2qj")
+autowrap_mode = 3
+
+[node name="Label6" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1256.0
+offset_top = 416.0
+offset_right = 1728.0
+offset_bottom = 509.0
+text = "Allows three bubbles to be missed without consequence"
+label_settings = SubResource("LabelSettings_hb5je")
+autowrap_mode = 3
+
+[node name="LessonNav" parent="." instance=ExtResource("9_3vyhp")]
+layout_mode = 1

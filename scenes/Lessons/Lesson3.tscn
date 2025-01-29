@@ -1,0 +1,101 @@
+[gd_scene load_steps=8 format=3 uid="uid://244k5ogv3i8h"]
+
+[ext_resource type="Theme" uid="uid://c5ia32277hif5" path="res://ButtonLargeText.tres" id="1_df4un"]
+[ext_resource type="LabelSettings" uid="uid://bes7hnw4oc8wl" path="res://TutorialParagraph.tres" id="2_cyjh5"]
+[ext_resource type="Texture2D" uid="uid://b6vaoo6ppt84x" path="res://assets/Heart.png" id="3_7kksv"]
+[ext_resource type="Texture2D" uid="uid://bha2opuwsg148" path="res://assets/halfheart.png" id="4_w41yx"]
+[ext_resource type="Texture2D" uid="uid://dp2b5fjvif3nm" path="res://assets/Noheart.png" id="5_78rog"]
+[ext_resource type="Texture2D" uid="uid://7k1x43k3jpwe" path="res://assets/Brokenheart.png" id="6_85hxu"]
+[ext_resource type="PackedScene" uid="uid://dtbcd77jdir8p" path="res://scenes/Lessons/LessonNav.tscn" id="7_0xryk"]
+
+[node name="Lesson3" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -317.0
+offset_right = 317.0
+offset_bottom = 99.0
+grow_horizontal = 2
+theme = ExtResource("1_df4un")
+text = "The health display"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 200.0
+offset_right = 1848.0
+offset_bottom = 400.0
+text = "During gameplay, in the bottom right of your screen (in normal and powerless modes) you will see a heart. This heart changes its appearance depending on how many misses you have had. After two misses, the heart will move to the center of the screen, enlarge and break. This is game over. A full heart means you can take two more misses, and a half heart means you can only take one more miss before you're out."
+label_settings = ExtResource("2_cyjh5")
+autowrap_mode = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(384, 704)
+scale = Vector2(0.613668, 0.613668)
+texture = ExtResource("3_7kksv")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(832, 712)
+scale = Vector2(0.610638, 0.610638)
+texture = ExtResource("4_w41yx")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(1264.84, 712.838)
+scale = Vector2(0.535661, 0.535661)
+texture = ExtResource("5_78rog")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(1648.84, 712.838)
+scale = Vector2(0.535661, 0.535661)
+texture = ExtResource("6_85hxu")
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(1392.84, 712.838)
+points = PackedVector2Array(0, 0, 123, 0)
+
+[node name="Line2D2" type="Line2D" parent="."]
+position = Vector2(1384.84, 712.838)
+points = PackedVector2Array(80, -32, 128, -1)
+
+[node name="Line2D3" type="Line2D" parent="."]
+position = Vector2(1384.84, 712.838)
+points = PackedVector2Array(80, 32, 128, 1)
+
+[node name="LessonNav" parent="." instance=ExtResource("7_0xryk")]
+layout_mode = 1
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 344.0
+offset_top = 544.0
+offset_right = 436.0
+offset_bottom = 602.0
+text = "2 HP"
+label_settings = ExtResource("2_cyjh5")
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 792.0
+offset_top = 544.0
+offset_right = 884.0
+offset_bottom = 602.0
+text = "1 HP"
+label_settings = ExtResource("2_cyjh5")
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1424.0
+offset_top = 544.0
+offset_right = 1516.0
+offset_bottom = 602.0
+text = "0 HP"
+label_settings = ExtResource("2_cyjh5")

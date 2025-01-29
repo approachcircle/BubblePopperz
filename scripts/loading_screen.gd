@@ -9,7 +9,11 @@ func _ready() -> void:
 	mode_label.text = "Game mode: " + Globals.GameMode.find_key(Globals.current_game_mode)
 	var tip: Label = get_node("Tip")
 	if Globals.current_game_mode == Globals.GameMode.Limitless:
-		tip.visible = true
+		tip.text = "Tip: In limitless mode, you can't die!"
+	if Globals.current_game_mode == Globals.GameMode.Normal:
+		tip.text = "Tip: If you miss twice, you're out!"
+	if Globals.current_game_mode == Globals.GameMode.Powerless:
+		tip.text = "Tip: You cannot use powerups in this mode, so be careful!"
 	thread = Thread.new()
 	var result = thread.start(load_game)
 	if result != OK:
