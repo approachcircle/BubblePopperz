@@ -2,9 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dtbcd77jdir8p" path="res://scenes/Lessons/LessonNav.tscn" id="1_6jtir"]
 [ext_resource type="Theme" uid="uid://c5ia32277hif5" path="res://ButtonLargeText.tres" id="2_3erwd"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_cleww"]
-font_size = 42
+[ext_resource type="LabelSettings" uid="uid://bes7hnw4oc8wl" path="res://TutorialParagraph.tres" id="2_vt7a6"]
 
 [node name="Intro" type="Control"]
 layout_mode = 3
@@ -21,10 +19,10 @@ layout_mode = 1
 layout_mode = 0
 offset_left = 80.0
 offset_top = 200.0
-offset_right = 1856.0
+offset_right = 1848.0
 offset_bottom = 776.0
-text = "Welcome to bubble popperz! This is a game where you have to click bubbles before they reach their maximum size. Only the mouse is required to click these bubbles. (Press Next to advance the tutorial)"
-label_settings = SubResource("LabelSettings_cleww")
+text = "Welcome to bubble popperz! This is a game where you have to click bubbles before they reach their maximum size. Only the mouse is required to click these bubbles. (Press \"Next\" to advance the tutorial where we'll find out if you're up to the task, so get ready!)"
+label_settings = ExtResource("2_vt7a6")
 autowrap_mode = 3
 
 [node name="Label2" type="Label" parent="."]
