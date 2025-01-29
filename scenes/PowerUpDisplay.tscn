@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://mjpp581famsg"]
+[gd_scene load_steps=12 format=3 uid="uid://mjpp581famsg"]
 
 [ext_resource type="Script" path="res://scripts/power_up_display.gd" id="1_dhp6e"]
 [ext_resource type="Texture2D" uid="uid://ma5u3rdd8icg" path="res://assets/circle.png" id="1_rlask"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://r4th0vc78j54" path="res://assets/powerups/shield.PNG" id="3_2nrwg"]
 [ext_resource type="Texture2D" uid="uid://bo6pbf2cu06pp" path="res://assets/powerups/freeze.png" id="4_5ccna"]
 [ext_resource type="Texture2D" uid="uid://cs21qtlsfdy35" path="res://assets/powerups/nuke.png" id="5_n0api"]
+[ext_resource type="LabelSettings" uid="uid://bes7hnw4oc8wl" path="res://TutorialParagraph.tres" id="7_itynl"]
 
 [sub_resource type="Animation" id="Animation_xqs4n"]
 length = 0.001
@@ -189,9 +190,9 @@ texture = ExtResource("1_rlask")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 1552.0
-offset_top = 104.0
+offset_top = 152.0
 offset_right = 1897.0
-offset_bottom = 203.0
+offset_bottom = 251.0
 theme = ExtResource("2_26uc2")
 text = "Powerups"
 
@@ -245,3 +246,27 @@ texture = ExtResource("5_n0api")
 libraries = {
 "": SubResource("AnimationLibrary_tl8po")
 }
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 1588.0
+offset_top = 112.0
+offset_right = 1612.0
+offset_bottom = 170.0
+text = "1"
+label_settings = ExtResource("7_itynl")
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 1716.0
+offset_top = 112.0
+offset_right = 1740.0
+offset_bottom = 170.0
+text = "2"
+label_settings = ExtResource("7_itynl")
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 1844.0
+offset_top = 112.0
+offset_right = 1868.0
+offset_bottom = 170.0
+text = "3"
+label_settings = ExtResource("7_itynl")

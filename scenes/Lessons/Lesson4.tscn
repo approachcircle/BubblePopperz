@@ -1,6 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://dlalvf3l6atld"]
+[gd_scene load_steps=7 format=3 uid="uid://dlalvf3l6atld"]
 
 [ext_resource type="PackedScene" uid="uid://dtbcd77jdir8p" path="res://scenes/Lessons/LessonNav.tscn" id="1_ekbbk"]
+[ext_resource type="Theme" uid="uid://c5ia32277hif5" path="res://ButtonLargeText.tres" id="2_qvsqj"]
+[ext_resource type="LabelSettings" uid="uid://bes7hnw4oc8wl" path="res://TutorialParagraph.tres" id="3_g107a"]
+
+[sub_resource type="Theme" id="Theme_dq16q"]
+default_font_size = 40
+
+[sub_resource type="Theme" id="Theme_8t75t"]
+default_font_size = 36
+
+[sub_resource type="Theme" id="Theme_8q6ee"]
+default_font_size = 35
 
 [node name="Lesson4" type="Control"]
 layout_mode = 3
@@ -12,3 +23,82 @@ grow_vertical = 2
 
 [node name="LessonNav" parent="." instance=ExtResource("1_ekbbk")]
 layout_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -223.5
+offset_right = 223.5
+offset_bottom = 99.0
+grow_horizontal = 2
+theme = ExtResource("2_qvsqj")
+text = "Gamemodes"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 200.0
+offset_right = 1848.0
+offset_bottom = 400.0
+text = "When you click the play button on the main menu, you will be greeted with three different game modes to choose from: Normal, Limitless and Powerless. Depending on the gamemode, the gameplay will gain/lose certain mechanics. See below for a description of what each gamemodes will do."
+label_settings = ExtResource("3_g107a")
+autowrap_mode = 3
+
+[node name="Normal" type="Button" parent="."]
+layout_mode = 0
+offset_left = 248.0
+offset_top = 632.0
+offset_right = 448.0
+offset_bottom = 712.0
+theme = SubResource("Theme_dq16q")
+text = "Normal"
+
+[node name="Limitless" type="Button" parent="."]
+layout_mode = 0
+offset_left = 832.0
+offset_top = 632.0
+offset_right = 1032.0
+offset_bottom = 712.0
+theme = SubResource("Theme_8t75t")
+text = "Limitless"
+
+[node name="Powerless" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1416.0
+offset_top = 632.0
+offset_right = 1616.0
+offset_bottom = 712.0
+theme = SubResource("Theme_8q6ee")
+text = "Powerless"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1224.0
+offset_top = 464.0
+offset_right = 1816.0
+offset_bottom = 600.0
+text = "You cannot use any powerups in this gamemode."
+label_settings = ExtResource("3_g107a")
+autowrap_mode = 3
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 488.0
+offset_right = 672.0
+offset_bottom = 616.0
+text = "This mode has every mechanic in the game and is unchanged."
+label_settings = ExtResource("3_g107a")
+autowrap_mode = 3
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 0
+offset_left = 600.0
+offset_top = 736.0
+offset_right = 1264.0
+offset_bottom = 872.0
+text = "In this mode you can't die even after missing multiple bubbles."
+label_settings = ExtResource("3_g107a")
+autowrap_mode = 3

@@ -1,11 +1,14 @@
 extends Node
 
+var shield_button: Button
+var nuke_button: Button
+var freeze_button: Button
 
 func _ready() -> void:
 	get_node("BigShield").visible = false
-	var shield_button: Button = get_node("ShieldButton")
-	var nuke_button: Button = get_node("NukeButton")
-	var freeze_button: Button = get_node("FreezeButton")
+	shield_button = get_node("ShieldButton")
+	nuke_button = get_node("NukeButton")
+	freeze_button = get_node("FreezeButton")
 	shield_button.modulate.a = 0
 	nuke_button.modulate.a = 0
 	freeze_button.modulate.a = 0
@@ -52,3 +55,9 @@ func _process(delta: float) -> void:
 	get_node("Freeze").visible = Globals.PowerUp.Freeze in Globals.powerups
 	# get_node("BigShield").visible = Globals.PowerUp.Shield in Globals.active_powerups
 	get_node("BigFreeze").visible = Globals.PowerUp.Freeze in Globals.active_powerups
+	if Input.is_action_just_pressed("use_shield"):
+		shield_button.emit_signal("pressed")
+	if Input.is_action_just_pressed("use_freeze"):
+		freeze_button.emit_signal("pressed")
+	if Input.is_action_just_pressed("use_nuke"):
+		nuke_button.emit_signal("pressed")
