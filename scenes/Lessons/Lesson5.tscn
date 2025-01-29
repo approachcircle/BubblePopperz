@@ -28,6 +28,7 @@ theme = ExtResource("2_da47a")
 text = "The end"
 
 [node name="Label2" type="Label" parent="."]
+layout_mode = 0
 offset_left = 80.0
 offset_top = 192.0
 offset_right = 1848.0

@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://c5ia32277hif5" path="res://ButtonLargeText.tres" id="1_6gemr"]
 [ext_resource type="LabelSettings" uid="uid://bes7hnw4oc8wl" path="res://TutorialParagraph.tres" id="2_4nlm2"]
-[ext_resource type="Texture2D" uid="uid://gqiigytfuqgv" path="res://assets/Nuke Bubbles/Finam_Nuke_Bubble(Frame4).png" id="3_vf16k"]
+[ext_resource type="Texture2D" uid="uid://14wkvd6h4dw4" path="res://assets/Nuke Bubbles/Finam_Nuke_Bubble(Frame4).png" id="3_vf16k"]
 [ext_resource type="Texture2D" uid="uid://dedmjd8sb3pc8" path="res://assets/small bubbles/Ice_bubble.png" id="4_kqat4"]
 [ext_resource type="Texture2D" uid="uid://ddc7noko22f17" path="res://assets/final bubbles/Final shield bubble.png" id="5_ha44r"]
 [ext_resource type="Texture2D" uid="uid://cs21qtlsfdy35" path="res://assets/powerups/nuke.png" id="6_hyeg7"]
