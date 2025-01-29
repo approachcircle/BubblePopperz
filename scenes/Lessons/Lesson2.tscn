@@ -45,7 +45,7 @@ offset_left = 80.0
 offset_top = 200.0
 offset_right = 1848.0
 offset_bottom = 400.0
-text = "Now we'll cover powerup bubbles. These are a special type of bubble which upon being popped, will drop its corresponding powerup to be used to gain an advantage in-game. The three types of powerup bubble and powerup are displayed below:"
+text = "Now we'll cover powerup bubbles. These are a special type of bubble which upon being popped, will drop its corresponding powerup to be used to gain an advantage in-game. You can either click these powerups on the top right of your screen, or use the number keys. The three types of powerup bubble and powerup are displayed below:"
 label_settings = ExtResource("2_4nlm2")
 autowrap_mode = 3
 
