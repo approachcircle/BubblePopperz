@@ -31,6 +31,7 @@ func _process(delta: float) -> void:
 		get_node("Next").text = "End"
 	else:
 		get_node("Next").text = "Next"
+	get_node("Lesson").text = "Lesson " + str(Globals.current_lesson + 1) + "/" + str(Globals.total_lessons)
 
 func transfer_to_new_lesson() -> Resource:
 	var new_lesson = load("res://scenes/Lessons/Lesson" + str(Globals.current_lesson) + ".tscn")

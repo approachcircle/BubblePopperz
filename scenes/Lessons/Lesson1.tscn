@@ -3,9 +3,7 @@
 [ext_resource type="Script" path="res://scripts/lesson_1.gd" id="1_h7s2v"]
 [ext_resource type="Theme" uid="uid://c5ia32277hif5" path="res://ButtonLargeText.tres" id="1_oplai"]
 [ext_resource type="PackedScene" uid="uid://dtbcd77jdir8p" path="res://scenes/Lessons/LessonNav.tscn" id="2_ji0b6"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_yhx56"]
-font_size = 42
+[ext_resource type="LabelSettings" uid="uid://bes7hnw4oc8wl" path="res://TutorialParagraph.tres" id="4_x1166"]
 
 [node name="Lesson1" type="Control"]
 layout_mode = 3
@@ -35,8 +33,8 @@ layout_mode = 1
 layout_mode = 0
 offset_left = 80.0
 offset_top = 192.0
-offset_right = 1920.0
-offset_bottom = 320.0
-text = "Next we will see if you're up to the task, try clicking the bubbles below, and click \"Next\" when you're ready."
-label_settings = SubResource("LabelSettings_yhx56")
+offset_right = 1848.0
+offset_bottom = 372.0
+text = "Try clicking the bubbles that appear below. If you don't click them in time, you'll notice a miss indicator will appear where the bubble used to be. During gameplay, these bubbles will also spawn faster and faster exponentially. (Don't worry, there is a cap). Once you're finished, press \"Next\"."
+label_settings = ExtResource("4_x1166")
 autowrap_mode = 3
